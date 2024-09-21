@@ -1,13 +1,14 @@
 'use client'; // For Next.js app router
 import { IDKitWidget, VerificationLevel } from '@worldcoin/idkit';
 import React from 'react';
-
+import { useNavigate } from 'react-router-dom';
 const serverPort = 3001;
 const WorldcoinVerification = ({ onVerifySuccess }) => {
+    const navigate = useNavigate();
     const onSuccess = async (responseData) => {
         // Handle the success data from the backend if needed
         console.log("Verification Successful:", responseData);
-        // window.location.href = "/success"; // Redirect to a success page
+        navigate('/home') // Redirect to a success page
         onVerifySuccess(true);
     };
 

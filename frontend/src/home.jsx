@@ -29,7 +29,7 @@ const HomePage = () => {
           <div className="profile-details">
             <h2>Wenjiggler.eth</h2>
             <p>Streak: 50 days!</p>
-          </div>
+          </div> 
         </div>
       </div>
 
@@ -47,7 +47,7 @@ const HomePage = () => {
         <h2>Currently Active:</h2>
         <div className="active-course">
           <img 
-            src="https://your-image-url.com/sigma-male.png" 
+            src="C:\Users\seahs\repos\MedDataChain\frontend\public\sigma.jpg" 
             alt="Currently Active" 
           />
           <p>LookMaxxing</p>
