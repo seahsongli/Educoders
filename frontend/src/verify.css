@@ -1,0 +1,23 @@
+.button-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100vh; /* Full height for vertical centering */
+}
+
+.verify-button {
+    background-color: #76c7c0; /* Button color */
+    color: white; /* Text color */
+    border: none; /* No border */
+    border-radius: 25px; /* Rounded corners */
+    padding: 15px 30px; /* Padding for size */
+    font-size: 1.2em; /* Font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition for hover effects */
+    box-shadow: 0 4px 15px rgba(0, 124, 124, 0.5); /* Stylish box shadow */
+}
+
+.verify-button:hover {
+    background-color: #5da9a6; /* Darker color on hover */
+    transform: translateY(-3px); /* Slight lift effect on hover */
+}

@@ -2,6 +2,7 @@
 import { IDKitWidget, VerificationLevel } from '@worldcoin/idkit';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import './verify.css';
 const serverPort = 3001;
 const WorldcoinVerification = ({ onVerifySuccess }) => {
     const navigate = useNavigate();
@@ -26,20 +27,22 @@ const WorldcoinVerification = ({ onVerifySuccess }) => {
             throw new Error("Verification failed."); // IDKit will handle this error
         }
     };
-
     return (
-        <IDKitWidget
-            app_id="app_staging_d2fdb1622a1a3f396abdecf1eef2efad" // obtained from Developer Portal
-            action="vote-for-moolah" // obtained from Developer Portal
-            onSuccess={onSuccess}
-            handleVerify={handleVerify}
-            verification_level={VerificationLevel.Device}
-        >
-            {({ open }) => 
-                <button onClick={open}>Verify with World ID</button>
-            }
-        </IDKitWidget>
+        <div className="button-container">
+            <IDKitWidget
+                app_id="app_staging_d2fdb1622a1a3f396abdecf1eef2efad"
+                action="vote-for-moolah"
+                onSuccess={onSuccess}
+                handleVerify={handleVerify}
+                verification_level={VerificationLevel.Device}
+            >
+                {({ open }) => 
+                    <button className="verify-button" onClick={open}>Verify with World ID</button>
+                }
+            </IDKitWidget>
+        </div>
     );
+    
 };
 
 export default WorldcoinVerification;

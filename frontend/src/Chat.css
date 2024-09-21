@@ -1,0 +1,115 @@
+.chat-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .messages {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    height: 300px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+  }
+  
+  .message {
+    padding: 8px;
+    border-radius: 4px;
+    background-color: #f1f1f1;
+    margin: 5px 0;
+  }
+  
+  .message-input {
+    display: flex;
+  }
+  
+  .input-box {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .send-button {
+    padding: 10px 15px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .send-button:hover {
+    background-color: #0056b3;
+  }
+  .jiggar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+  .bottom-nav {
+    display: flex;
+    /* justify-content: space-between; Try 'space-between' or 'center' */
+    padding: 10px;
+    border-top: 1px solid #ccc;
+    background-color: #fff;
+    margin-top: 10px; /* Ensure there's space between the messages and nav */
+    left: 0;
+  }
+  
+  .nav-item {
+    display: flex;
+    align-items: center;
+    color: #000;
+  }
+  
+  .nav-item.active {
+    color: #000;
+    font-weight: bold;
+  }
+  
+  .nav-item span {
+    font-size: 12px;
+    margin-top: 5px;
+  }
+  
+  .option,
+  .nav-item {
+    cursor: pointer;
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .nav-item:hover {
+    background-color: #f0f0f0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .option:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .message {
+    display: flex;
+    align-items: center; /* Align profile image and text vertically */
+    padding: 8px;
+    border-radius: 4px;
+    background-color: #f1f1f1;
+    margin: 5px 0;
+  }
+  
+  .profile-image {
+    border-radius: 50%; /* Make the image circular */
+    width: 40px; /* Size of the profile image */
+    height: 40px; /* Size of the profile image */
+    margin-right: 10px; /* Space between the image and text */
+  }
+  

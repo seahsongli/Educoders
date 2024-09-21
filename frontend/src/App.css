@@ -3,6 +3,36 @@ body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
+  
+}
+.Jigger {
+  margin: 0;
+  bottom: 0;   
+  align-self:self-end;
+}
+p {
+  padding: 0;
+  margin: 0;
+}
+.streak-text {
+  margin: 0;
+  padding: 0;
+  font-size: 1.5em; /* Increase the font size */
+  font-weight: bold; /* Bold text */
+  background: linear-gradient(45deg, #2725a4, #88a2f0, #947de6);
+  -webkit-background-clip: text; /* Clip the background to the text */
+  -webkit-text-fill-color: transparent; /* Make the text transparent to show gradient */
+  text-shadow: 2px 2px 5px rgba(113, 191, 255, 0.5), 0 0 10px rgba(54, 152, 233, 0.8); /* Add fiery shadow */
+  animation: glow 1.5s infinite alternate; /* Add glow effect */
+}
+
+@keyframes glow {
+  0% {
+      text-shadow: 2px 2px 5px rgba(0, 132, 255, 0.5), 0 0 10px rgb(0, 183, 255);
+  }
+  100% {
+      text-shadow: 4px 4px 10px rgba(127, 104, 241, 0.7), 0 0 20px rgb(123, 147, 255);
+  }
 }
 
 .home-page {
@@ -26,8 +56,8 @@ body {
 }
 
 .profile-avatar {
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 20  0px;
   border-radius: 50%;
   margin-right: 20px;
 }
@@ -178,3 +208,99 @@ Vaporize Animation
 .eth-bottom {
   border-top: 50px solid #3C3C3D;
 } */ 
+
+.active-course {
+  background-color: white; /* Background color of the card */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  overflow: hidden; /* Ensures rounded corners are applied to child elements */
+  transition: transform 0.3s ease; /* Smooth transform effect on hover */
+  width: 200px; /* Set a fixed width for the card */
+  margin: 10px; /* Space between cards */
+  text-align: center; /* Center text alignment */
+}
+
+.active-course img {
+  width: 100%; /* Full width for the image */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.active-course p {
+  font-size: 1.2em; /* Font size for the title */
+  margin: 10px 0 5px; /* Margin for spacing */
+  font-weight: bold; /* Bold text for emphasis */
+}
+
+.active-course small {
+  font-size: 0.9em; /* Smaller font for the subtitle */
+  color: gray; /* Subtle color for the subtitle */
+}
+
+.active-course:hover {
+  transform: translateY(-5px); /* Slight lift effect on hover */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+/* Progress Bar Styles */
+.level-progress-bar {
+  width: 100%;
+  height: 20px;
+  background-color: #e0e0e0; /* Background color */
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative; /* Position relative for absolute children */
+}
+
+.progress {
+  height: 100%;
+  background: linear-gradient(90deg, #3b5998, #8b9dc3); /* Gradient color */
+  transition: width 1s ease; /* Smooth transition for width */
+  border-radius: 10px; /* Match border radius */
+}
+
+/* You may also want to style the hover or active state */
+.progress:hover {
+  background: linear-gradient(90deg, #8b9dc3, #3b5998); /* Change on hover */
+}
+/* Popup Styles */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000; /* Ensure it appears above other content */
+}
+
+.popup-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.popup-content h2 {
+  margin: 0 0 10px;
+}
+
+.popup-content p {
+  margin: 0 0 20px;
+}
+
+.popup-content button {
+  background-color: #3b5998; /* Button color */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.popup-content button:hover {
+  background-color: #8b9dc3; /* Lighter button color on hover */
+}

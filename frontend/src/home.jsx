@@ -1,124 +1,124 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import { useNavigate } from 'react-router-dom';
+import { FaHome, FaBook, FaEnvelope, FaUser } from 'react-icons/fa';
 
 const HomePage = () => {
-  // State for vaporizing each face
-  const [vaporizeFront, setVaporizeFront] = useState(false);
-  const [vaporizeBack, setVaporizeBack] = useState(false);
-  const [vaporizeLeft, setVaporizeLeft] = useState(false);
-  const [vaporizeRight, setVaporizeRight] = useState(false);
-  const [vaporizeTop, setVaporizeTop] = useState(false);
-  const [vaporizeBottom, setVaporizeBottom] = useState(false);
-  const navigate = useNavigate();
-  const PageHandler = (e) => {
-    const page = e.currentTarget.getAttribute('data-page'); // Get the page from data attribute
-    if (page) {
-      navigate(page); // Redirect to the page
-    }
-  };
+    const [progressWidth, setProgressWidth] = useState(0);
+    const [showPopup, setShowPopup] = useState(false);
+    const navigate = useNavigate();
 
-  return (
-    <div className="home-page">
-      {/* Header */}
-      <div className="header">
-        <h1>EduGoondus</h1>
-      </div>
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setProgressWidth((prev) => {
+                if (prev < 100) {
+                    return prev + 10; // Increase progress by 10%
+                } else {
+                    clearInterval(interval); // Stop when 100% is reached
+                    setShowPopup(true); // Show popup when progress reaches 100%
+                    return prev;
+                }
+            });
+        }, 1000); // Update every second
 
-      {/* Profile Section */}
-      <div className="profile-section">
-        <div className="profile-info">
-          <img 
-            className="profile-avatar" 
-            src="https://noun.pics/1250.svg" 
-            alt="User Avatar" 
-          />
-          <div className="profile-details">
-            <h2>Wenjiggler.eth</h2>
-            <p>Streak: 50 days!</p>
-          </div> 
+        return () => clearInterval(interval); // Cleanup on unmount
+    }, []);
+
+    const PageHandler = (e) => {
+        const page = e.currentTarget.getAttribute('data-page'); // Get the page from data attribute
+        if (page) {
+            navigate(page); // Redirect to the page
+        }
+    };
+
+    const closePopup = () => {
+        setShowPopup(false); // Close the popup
+    };
+
+    return (
+        <div className="home-page">
+            {/* Header */}
+            <div className="header">
+                <h1>EduGoondus</h1>
+            </div>
+
+            {/* Profile Section */}
+            <div className="profile-section">
+                <div className="profile-info">
+                    <img 
+                        className="profile-avatar" 
+                        src="https://noun.pics/1250.svg" 
+                        alt="User Avatar" 
+                    />
+                    <div className="profile-details">
+                        <h2 className="Jigger">Wenjiggler.eth</h2>
+                        <p><span className="streak-text">Streak: 50 days!</span></p>
+                    </div> 
+                </div>
+            </div>
+
+            {/* Level Section */}
+            <div className="level-section">
+                <h2>Level 42</h2>
+                <div className="level-progress-bar">
+                    <div className="progress" style={{ width: `${progressWidth}%` }}></div>
+                </div>
+                <p>{progressWidth}% to next level</p>
+            </div>
+
+            {/* Currently Active Section */}
+            <div className="currently-active-section">
+                <h2>Currently Active:</h2>
+                <div className="jiggar">
+                <div className="active-course">
+                    <img 
+                        src="https://i.ytimg.com/vi/SoW6BLDdbqY/hqdefault.jpg" 
+                        alt="Currently Active" 
+                    />
+                    <p>LookMaxxing</p>
+                    <small>Skibidi Toilet</small>
+                </div>
+                </div>
+                
+            </div>
+
+            {/* 3D Rotating Cube Section */}
+            <div className="cube-container">
+                {/* Cube code here... */}
+            </div>
+
+            {/* Bottom Navigation */}
+            <div className="bottom-nav">
+                <div className="nav-item" data-page="/home" onClick={PageHandler}>
+                    <FaHome className="icon" />
+                    <span>Home</span>
+                </div>
+                <div className="nav-item" data-page="/courses" onClick={PageHandler}>
+                    <FaBook className="icon" />
+                    <span>Courses</span>
+                </div>
+                <div className="nav-item" data-page="/messages" onClick={PageHandler}>
+                    <FaEnvelope className="icon" />
+                    <span>Messages</span>
+                </div>
+                <div className="nav-item active" data-page="/myAccount" onClick={PageHandler}>
+                    <FaUser className="icon" />
+                    <span>Profile</span>
+                </div>
+            </div>
+
+            {/* Popup Component */}
+            {showPopup && (
+                <div className="popup">
+                    <div className="popup-content">
+                        <h2>Congratulations!</h2>
+                        <p>You have earned 100 ETH!</p>
+                        <button onClick={closePopup}>Close</button>
+                    </div>
+                </div>
+            )}
         </div>
-      </div>
-
-      {/* Level Section */}
-      <div className="level-section">
-        <h2>Level 42</h2>
-        <div className="level-progress-bar">
-          <div className="progress" style={{ width: '50%' }}></div>
-        </div>
-        <p>50% to next level</p>
-      </div>
-
-      {/* Currently Active Section */}
-      <div className="currently-active-section">
-        <h2>Currently Active:</h2>
-        <div className="active-course">
-          <img 
-            src="C:\Users\seahs\repos\MedDataChain\frontend\public\sigma.jpg" 
-            alt="Currently Active" 
-          />
-          <p>LookMaxxing</p>
-          <small>Skibidi Toilet</small>
-        </div>
-      </div>
-
-      {/* 3D Rotating Cube Section
-      <div className="cube-container">
-        <div className="cube">
-          <div 
-            className={`cube-face front ${vaporizeFront ? 'vaporize' : ''}`}
-            onClick={() => setVaporizeFront(true)}
-          >
-            <img src="https://noun.pics/1250.svg" alt="Front" />
-          </div>
-          <div 
-            className={`cube-face back ${vaporizeBack ? 'vaporize' : ''}`}
-            onClick={() => setVaporizeBack(true)}
-          >
-            <img src="https://noun.pics/1250.svg" alt="Back" />
-          </div>
-          <div 
-            className={`cube-face left ${vaporizeLeft ? 'vaporize' : ''}`}
-            onClick={() => setVaporizeLeft(true)}
-          >
-            <img src="https://noun.pics/1250.svg" alt="Left" />
-          </div>
-          <div 
-            className={`cube-face right ${vaporizeRight ? 'vaporize' : ''}`}
-            onClick={() => setVaporizeRight(true)}
-          >
-            <img src="https://noun.pics/1250.svg" alt="Right" />
-          </div>
-          <div 
-            className={`cube-face top ${vaporizeTop ? 'vaporize' : ''}`}
-            onClick={() => setVaporizeTop(true)}
-          >
-            <img src="https://noun.pics/1250.svg" alt="Top" />
-          </div>
-          <div 
-            className={`cube-face bottom ${vaporizeBottom ? 'vaporize' : ''}`}
-            onClick={() => setVaporizeBottom(true)}
-          >
-            <img src="https://noun.pics/1250.svg" alt="Bottom" />
-          </div>
-        </div>
-        {/* 3D Ethereum Logo Inside the Cube */}
-        {/* <div className="ethereum-logo">
-          <div className="eth-top"></div>
-          <div className="eth-bottom"></div>
-        </div>
-      </div> */}
-
-      {/* Bottom Navigation */}
-      <div className="bottom-nav">
-        <button onClick = {PageHandler} data-page = '/home'>Home</button>
-        <button onClick = {PageHandler} data-page = '/courses'>Courses</button>
-        <button onClick = {PageHandler} data-page = '/messages' >Messages</button>
-        <button onClick = {PageHandler} data-page = '/myAccount'>Profile</button>
-        <button onClick = {PageHandler} data-page = '/help'>Help</button>
-      </div>
-    </div>
-  );
+    );
 };
 
 export default HomePage;

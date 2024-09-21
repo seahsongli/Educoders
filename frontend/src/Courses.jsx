@@ -36,6 +36,11 @@ const Courses = () => {
           window.location.href = page; // Redirect to the page
         }
       };
+    
+    const sendToCoursera = (input) => () => {
+        window.location.href = "https://www.coursera.org/" + input;
+    }
+
   return (
     <div className="courses-container">
       <h1>Available Courses</h1>
@@ -43,8 +48,8 @@ const Courses = () => {
         {coursesData.map((course) => (
           <div key={course.id} className="course-card">
             <h2>{course.title}</h2>
-            <p>{course.description}</p>
-            <button className="enroll-button">Enroll Now</button>
+            <p id = "dickscription">{course.description}</p>
+            <button className="enroll-button" onClick={sendToCoursera("learn/building-dapps-in-ethereum-blockchain?msockid=1670e21e9dd165f229bbf61a9cd06482")}>Enroll Now</button>
           </div>
         ))}
         <div className="bottom-nav">

@@ -74,7 +74,6 @@ const MyAccount = () => {
         </div>
       </div>
 
-      {/* Bottom Navigation */}
       <div className="bottom-nav">
         <div className="nav-item" data-page="/home" onClick={PageHandler}>
           <FaHome className="icon" />
@@ -88,7 +87,7 @@ const MyAccount = () => {
           <FaEnvelope className="icon" />
           <span>Messages</span>
         </div>
-        <div className="nav-item active" data-page="/" onClick={PageHandler}>
+        <div className="nav-item active" data-page="/myAccount" onClick={PageHandler}>
           <FaUser className="icon" />
           <span>Profile</span>
         </div>
