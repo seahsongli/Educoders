@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       title: 'Goondus',
       theme: ThemeData(
           useMaterial3: true,
-          colorSchemeSeed: const Color.fromARGB(1, 255, 204, 0)),
+          colorSchemeSeed: const Color.fromARGB(1, 202, 239, 249)),
       home: const MyHomePage(title: 'EduGoondus'),
     );
   }
@@ -73,10 +73,12 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ],
       ),
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
-      ),
+      appBar: currentPageIndex == 0 || currentPageIndex == 1
+          ? AppBar(
+              backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+              title: Text(widget.title),
+            )
+          : null,
       body: widget.pages[currentPageIndex],
     );
   }

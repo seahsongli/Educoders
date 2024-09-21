@@ -5,27 +5,29 @@ class CoursesPage extends StatelessWidget {
   const CoursesPage({super.key});
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Column(
-        children: [
-          GreetingWidget(),
-          Align(
-            alignment: Alignment.centerLeft,
-            child: Padding(
-              padding: EdgeInsets.only(left: 24.0),
-              child: Text(
-                "Explore categories",
-                style: TextStyle(
-                  fontSize: 28,
-                  fontWeight: FontWeight.bold,
+    return const SafeArea(
+      child: Center(
+        child: Column(
+          children: [
+            GreetingWidget(),
+            Align(
+              alignment: Alignment.centerLeft,
+              child: Padding(
+                padding: EdgeInsets.only(left: 24.0),
+                child: Text(
+                  "Explore categories",
+                  style: TextStyle(
+                    fontSize: 28,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
             ),
-          ),
-          Expanded(
-            child: CoursesDisplay(),
-          ),
-        ],
+            Expanded(
+              child: CoursesDisplay(),
+            ),
+          ],
+        ),
       ),
     );
   }
