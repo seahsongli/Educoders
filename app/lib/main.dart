@@ -1,4 +1,4 @@
-import 'package:app/pages/courses_page.dart';
+import 'package:app/pages/courses_page/courses_page.dart';
 import 'package:app/pages/home_page.dart';
 import 'package:app/pages/messages_page.dart';
 import 'package:app/pages/profile_page.dart';
@@ -16,10 +16,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'Goondus',
       theme: ThemeData(
-        useMaterial3: true,
-      ),
+          useMaterial3: true,
+          colorSchemeSeed: const Color.fromARGB(1, 255, 204, 0)),
       home: const MyHomePage(title: 'EduGoondus'),
     );
   }
