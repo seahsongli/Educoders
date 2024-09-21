@@ -7,7 +7,7 @@ import { verifyCloudProof } from '@worldcoin/idkit';// Adjust this import if nec
 
 const app = express();
 const PORT = process.env.PORT || 3001; // Use a different port if needed
-const clientPort = 3000;
+
 // Middleware to parse JSON bodies
 app.use(cors({
     origin: 'http://localhost:3000', // Allow only your frontend
