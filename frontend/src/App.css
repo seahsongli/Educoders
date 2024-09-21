@@ -88,7 +88,7 @@ body {
 /* General styles omitted for brevity */
 
 /* 3D Cube Styles (same as before) */
-.cube-container {
+/* .cube-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -134,7 +134,7 @@ body {
   }
 }
 
-/* Vaporize Animation */
+Vaporize Animation
 @keyframes vaporize {
   0% {
     opacity: 1;
@@ -151,7 +151,7 @@ body {
 }
 
 /* Ethereum Logo Styles */
-.ethereum-logo {
+/* .ethereum-logo {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -177,4 +177,4 @@ body {
 
 .eth-bottom {
   border-top: 50px solid #3C3C3D;
-}
+} */ 

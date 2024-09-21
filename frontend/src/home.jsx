@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const HomePage = () => {
   // State for vaporizing each face
@@ -10,6 +10,13 @@ const HomePage = () => {
   const [vaporizeRight, setVaporizeRight] = useState(false);
   const [vaporizeTop, setVaporizeTop] = useState(false);
   const [vaporizeBottom, setVaporizeBottom] = useState(false);
+  const navigate = useNavigate();
+  const PageHandler = (e) => {
+    const page = e.currentTarget.getAttribute('data-page'); // Get the page from data attribute
+    if (page) {
+      navigate(page); // Redirect to the page
+    }
+  };
 
   return (
     <div className="home-page">
@@ -55,7 +62,7 @@ const HomePage = () => {
         </div>
       </div>
 
-      {/* 3D Rotating Cube Section */}
+      {/* 3D Rotating Cube Section
       <div className="cube-container">
         <div className="cube">
           <div 
@@ -96,21 +103,19 @@ const HomePage = () => {
           </div>
         </div>
         {/* 3D Ethereum Logo Inside the Cube */}
-        <div className="ethereum-logo">
+        {/* <div className="ethereum-logo">
           <div className="eth-top"></div>
           <div className="eth-bottom"></div>
         </div>
-      </div>
+      </div> */}
 
       {/* Bottom Navigation */}
       <div className="bottom-nav">
-        <button>Home</button>
-        <button>Courses</button>
-        <button>Messages</button>
-        <button>Profile</button>
-        <Link to="/help">
-          <button>Help</button>
-        </Link>
+        <button onClick = {PageHandler} data-page = '/home'>Home</button>
+        <button onClick = {PageHandler} data-page = '/courses'>Courses</button>
+        <button onClick = {PageHandler} data-page = '/messages' >Messages</button>
+        <button onClick = {PageHandler} data-page = '/myAccount'>Profile</button>
+        <button onClick = {PageHandler} data-page = '/help'>Help</button>
       </div>
     </div>
   );

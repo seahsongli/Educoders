@@ -4,9 +4,8 @@ import './Cube.css';
 import { FaEdit, FaLock, FaHistory, FaComments, FaStar, FaShareAlt, FaInfoCircle, FaHome, FaBook, FaEnvelope, FaUser } from 'react-icons/fa'; // Importing icons from react-icons
 
 const MyAccount = () => {
-
-    // PageHandler to redirect based on clicked item
-    const PageHandler = (e) => {
+  // PageHandler to redirect based on clicked item
+  const PageHandler = (e) => {
     const page = e.currentTarget.getAttribute('data-page'); // Get the page from data attribute
     if (page) {
       window.location.href = page; // Redirect to the page
@@ -19,28 +18,28 @@ const MyAccount = () => {
       <div className="profile-section">
         <p>Profile</p>
         {/* 3D Rotating Cube Section */} 
-      <div className="cube-container"> 
-        <div className="cube"> 
-          <div className="cube-face front"> 
-            <img src="https://noun.pics/1250.svg" alt="Front" /> 
+        <div className="cube-container"> 
+          <div className="cube"> 
+            <div className="cube-face front"> 
+              <img src="https://noun.pics/1250.svg" alt="Front" /> 
+            </div> 
+            <div className="cube-face back"> 
+              <img src="https://noun.pics/1250.svg" alt="Back" /> 
+            </div> 
+            <div className="cube-face left"> 
+              <img src="https://noun.pics/1250.svg" alt="Left" /> 
+            </div> 
+            <div className="cube-face right"> 
+              <img src="https://noun.pics/1250.svg" alt="Right" /> 
+            </div> 
+            <div className="cube-face top"> 
+              <img src="https://noun.pics/1250.svg" alt="Top" /> 
+            </div> 
+            <div className="cube-face bottom"> 
+              <img src="https://noun.pics/1250.svg" alt="Bottom" /> 
+            </div> 
           </div> 
-          <div className="cube-face back"> 
-            <img src="https://noun.pics/1250.svg" alt="Back" /> 
-          </div> 
-          <div className="cube-face left"> 
-            <img src="https://noun.pics/1250.svg" alt="Left" /> 
-          </div> 
-          <div className="cube-face right"> 
-            <img src="https://noun.pics/1250.svg" alt="Right" /> 
-          </div> 
-          <div className="cube-face top"> 
-            <img src="https://noun.pics/1250.svg" alt="Top" /> 
-          </div> 
-          <div className="cube-face bottom"> 
-            <img src="https://noun.pics/1250.svg" alt="Bottom" /> 
-          </div> 
-        </div> 
-      </div>
+        </div>
       </div>
 
       {/* Account Options */}
@@ -77,19 +76,19 @@ const MyAccount = () => {
 
       {/* Bottom Navigation */}
       <div className="bottom-nav">
-        <div className="nav-item" data-page="/home" onClick = {PageHandler}>
+        <div className="nav-item" data-page="/home" onClick={PageHandler}>
           <FaHome className="icon" />
           <span>Home</span>
         </div>
-        <div className="nav-item" data-page="/courses" onClick = {PageHandler}>
+        <div className="nav-item" data-page="/courses" onClick={PageHandler}>
           <FaBook className="icon" />
           <span>Courses</span>
         </div>
-        <div className="nav-item" data-page="/messages" onClick = {PageHandler}>
+        <div className="nav-item" data-page="/messages" onClick={PageHandler}>
           <FaEnvelope className="icon" />
           <span>Messages</span>
         </div>
-        <div className="nav-item active" data-page="/profile" onClick = {PageHandler}>
+        <div className="nav-item active" data-page="/" onClick={PageHandler}>
           <FaUser className="icon" />
           <span>Profile</span>
         </div>

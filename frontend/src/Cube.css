@@ -90,14 +90,13 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 200px;
     perspective: 1000px; /* 3D perspective */
   }
   
   .cube {
     position: relative;
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
     transform-style: preserve-3d;
     animation: rotateCube 5s infinite linear;
   }
